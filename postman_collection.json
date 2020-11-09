@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "0a73646b-0cf4-4a31-81e5-38297c5a27e3",
+		"name": "Teste",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Obter token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "empresa",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "EMPRESA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client",
+							"value": "EMPRESA",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/oauth/token",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDQ5MzI1ODEsInVzZXJfbmFtZSI6ImFkbWluIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9ST0xFIl0sImp0aSI6IjdjYTVkZmYwLWVhNmEtNGY0Mi05OThmLWI3OGVhN2UzY2M4MiIsImNsaWVudF9pZCI6IkVNUFJFU0EiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXX0.-bPJMKRTGrTHi7qBxH99ikilA7NNpiUaUZUzkJI4ZbI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Marcos\",\r\n    \"email\": \"teste@tes.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/usuario",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Digitos em cache",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDQ5MzI1ODEsInVzZXJfbmFtZSI6ImFkbWluIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9ST0xFIl0sImp0aSI6IjdjYTVkZmYwLWVhNmEtNGY0Mi05OThmLWI3OGVhN2UzY2M4MiIsImNsaWVudF9pZCI6IkVNUFJFU0EiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXX0.-bPJMKRTGrTHi7qBxH99ikilA7NNpiUaUZUzkJI4ZbI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/usuario/digito",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"digito"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calcular digito para usuario",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDQ5MzI1ODEsInVzZXJfbmFtZSI6ImFkbWluIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9ST0xFIl0sImp0aSI6IjdjYTVkZmYwLWVhNmEtNGY0Mi05OThmLWI3OGVhN2UzY2M4MiIsImNsaWVudF9pZCI6IkVNUFJFU0EiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXX0.-bPJMKRTGrTHi7qBxH99ikilA7NNpiUaUZUzkJI4ZbI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/usuario/digito/12345?idUsuario=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"digito",
+						"12345"
+					],
+					"query": [
+						{
+							"key": "idUsuario",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover Usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDQ5MzI1ODEsInVzZXJfbmFtZSI6ImFkbWluIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9ST0xFIl0sImp0aSI6IjdjYTVkZmYwLWVhNmEtNGY0Mi05OThmLWI3OGVhN2UzY2M4MiIsImNsaWVudF9pZCI6IkVNUFJFU0EiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXX0.-bPJMKRTGrTHi7qBxH99ikilA7NNpiUaUZUzkJI4ZbI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Marcos\",\r\n    \"email\": \"teste@tes.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/usuario/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recuperar digito usuario",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDQ5MzI1ODEsInVzZXJfbmFtZSI6ImFkbWluIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9ST0xFIl0sImp0aSI6IjdjYTVkZmYwLWVhNmEtNGY0Mi05OThmLWI3OGVhN2UzY2M4MiIsImNsaWVudF9pZCI6IkVNUFJFU0EiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXX0.-bPJMKRTGrTHi7qBxH99ikilA7NNpiUaUZUzkJI4ZbI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/usuario/2/digito",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"2",
+						"digito"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "empresa",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "EMPRESA",
+				"type": "string"
+			}
+		]
+	},
+	"protocolProfileBehavior": {}
+}
